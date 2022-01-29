@@ -12,6 +12,9 @@
 			$("#view").click(function () {
 
 				var T = 0;
+				$("#prodsT").text("");
+				var row = $('<tr><th>S.No.</th><th>Name</th><th>Quantity</th><th>Price</th></tr>');
+				$('#prodsT').append(row);
 
 				$.ajax({
 					type: 'POST',
@@ -106,7 +109,6 @@
 
 	<div style="text-align: center">
 		<h2>Bill</h2>
-
 				
 
 		<div id="addP" style="align-items: center">
@@ -146,18 +148,13 @@
 		<button id="view">View Bill</button>		
 		<br><br>
 		<table id="prodsT" style="width: 100%;">
-			<tr>
-				<th>S.No</th>
-				<th>Name</th>
-				<th>Quantity</th>
-				<th>Price</th>
-			</tr> 
+		
 		</table>
 		<br><br>
+		
 		<div class="desp" style="text-align: center">
 			Total Amount: <p id='total'></p> Rs.
 		</div>
-
 
 		<button id="clear">Clear</button>
 
